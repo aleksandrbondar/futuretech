@@ -4,6 +4,9 @@
 
 FutureTech is a modern, responsive website built with **HTML**, **SCSS**, and **JavaScript**. The project follows best practices for **accessibility (a11y)** and is optimized for both **desktop and mobile devices**.
 
+This website was designed based on the **Future Tech** design in Figma:  
+[Future Tech Figma Design](https://www.figma.com/design/YzTDRV7OaSoeCUBNYaoCZV/FutureTech?node-id=18-214&t=gcGmprKdPjIzoRJL-1)
+
 ## 📄 Pages
 
 The following pages have been implemented:

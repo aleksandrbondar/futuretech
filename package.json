@@ -1,0 +1,12 @@
+{
+  "name": "future-tech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

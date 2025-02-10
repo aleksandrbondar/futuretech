@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16)+rem;
+  }
+
+  @else {
+    @error 'Error in rem(): the value "#{$pixel}" has units. Only unitless numbers are allowed.';
+  }
+}
+
+@function fluid($max: 100, $min: 10) {
+  @if $max <=0 or $min <=0 {
+    @error 'Error in fluid(): $max and $min values must be greater than 0.';
+  }
+
+  $maxViewportWidth: 1920;
+  $minViewportWidth: 390;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(#{$minSize}rem,
+    #{$yAxisIntersection}rem + #{$slope * 100vw},
+    #{$maxSize}rem);
+}
